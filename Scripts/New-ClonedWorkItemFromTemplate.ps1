@@ -7,11 +7,14 @@
         
         This script is significantly slower than the clone operation through the Azure DevOps web UI, but offers two distinct advantages over the web:
 
-        1. This script can easily be called in a loop from another process. If you need to perform many clone operations you can 'foreach' through a list of items to clone.
+        1. This script can easily be called in a loop from another process. If you need to perform many clone operations you can 'foreach' through a 
+        list of items to clone.
         
-        2. This script offers variable expansion support. This is especially helpful for template work items that you may need to create over and over but with a slightly different title, description, or acceptance critera. This allows you to create slightly modified clones, instead of 'exact' clones.
+        2. This script offers variable expansion support. This is especially helpful for template work items that you may need to create over and over 
+        but with a slightly different title, description, or acceptance critera. This allows you to create slightly modified clones, instead of 'exact' clones.
 
-        This script was developed with Azure CLI v2.24.2 and the Azure-Devops v0.18.0 extension. That version of the AzDo extension has a couple bugs in it which have workarounds in the script. Its possible these workarounds may cause breaks in newer SDK versions.
+        This script was developed with Azure CLI v2.24.2 and the Azure-Devops v0.18.0 extension. That version of the AzDo extension has a couple bugs 
+        in it which have workarounds in the script. Its possible these workarounds may cause breaks in newer SDK versions.
 
         Prerequisites:
         1. The Az CLI is installed.
@@ -28,7 +31,9 @@
     .PARAMETER VariableExpansionMap
         An optional parameter to specify variable expansions. How it works:
 
-        1. In the work item to be cloned, add placeholder values using double-curly braces. Example: {{MyVariable}}. Variables should word characters only-- with no spaces, special characters, or numbers.
+        1. In the work item to be cloned, add placeholder values using double-curly braces. Example: {{MyVariable}}. Variables should word characters only, 
+        with no spaces, special characters, or numbers.
+
         2. Construct the map and pass it to the script as a parameter. See the example section for usage.
 
     .EXAMPLE
@@ -100,7 +105,6 @@ function Add-QuoteEscape($Text)
 # create a table of the extra fields that should be cloned (if present in the work item).
 
 $extraFieldsToClone = @(
-    "Custom.ToilTracking",
     "Microsoft.VSTS.Common.AcceptanceCriteria"
     "Microsoft.VSTS.Common.ValueArea",
     "Microsoft.VSTS.Scheduling.CompletedWork",
