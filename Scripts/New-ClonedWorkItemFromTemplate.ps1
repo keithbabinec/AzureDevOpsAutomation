@@ -15,6 +15,8 @@
 
         This script was developed with Azure CLI v2.24.2 and the Azure-Devops v0.18.0 extension. That version of the AzDo extension has a couple bugs 
         in it which have workarounds in the script. Its possible these workarounds may cause breaks in newer SDK versions.
+        
+        Tutorial instructions: https://keithbabinec.com/2021/06/05/how-to-use-the-azure-cli-to-clone-azure-devops-work-items-with-variable-expansion-support/
 
         Prerequisites:
         1. The Az CLI is installed.
